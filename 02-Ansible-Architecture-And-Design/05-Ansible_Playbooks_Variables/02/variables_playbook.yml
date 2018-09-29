@@ -1,0 +1,21 @@
+---
+-
+  hosts: client-ansible-31
+  gather_facts: false
+  vars:
+    dict:
+      dict_key: This is a dictionary value
+
+  tasks:
+    - name: test named dictionary 
+      debug:
+        msg: "{{ dict }}"
+
+    - name: test named dictionary  dictionary key value with dictionary dot notation
+      debug:
+        msg: "{{ dict.dict_key }}"
+
+    - name: test named dictionary  dictionary key value with dictionary python brackets nota
+      debug:
+        msg: "{{ dict['dict_key'] }}"
+...

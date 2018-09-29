@@ -1,0 +1,24 @@
+---
+-
+  hosts: client-ansible-31
+  gather_facts: false
+  vars:
+    named_list:
+      - item1
+      - item2
+      - item3
+      - item4
+
+  tasks:
+    - name: test named lists
+      debug:
+        msg: "{{ named_list }}"
+
+    - name: test named lists first item dot notation
+      debug:
+        msg: "{{ named_list.0 }}"
+
+    - name: test named list fisrt item brackets nota
+      debug:
+        msg: "{{ named_list[0] }}"
+...

@@ -1,0 +1,12 @@
+---
+-
+  hosts: client-ansible-31
+  gather_facts: false
+  vars:
+    example_key: example value
+
+  tasks:
+    - name: test dictionary key value
+      debug:
+        msg: "{{ example_key }}"
+...

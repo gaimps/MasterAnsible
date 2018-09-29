@@ -1,0 +1,21 @@
+---
+-
+  hosts: client-ansible-31
+  gather_facts: false
+  vars:
+    inline_dict:
+      {inline_dict_key: This is an inline dictionary values}
+
+  tasks:
+    - name: test named dictionary 
+      debug:
+        msg: "{{ inline_dict }}"
+
+    - name: test named dictionary  dictionary key value with dictionary dot notation
+      debug:
+        msg: "{{ inline_dict.inline_dict_key }}"
+
+    - name: test named dictionary  dictionary key value with dictionary python brackets nota
+      debug:
+        msg: "{{ inline_dict['inline_dict_key'] }}"
+...

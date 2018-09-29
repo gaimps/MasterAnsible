@@ -1,0 +1,11 @@
+[all]
+master-ansible-30
+client-ansible-31
+client-ansible-32
+
+[master]
+master-ansible-30
+
+[client]
+client-ansible-31
+client-ansible-32

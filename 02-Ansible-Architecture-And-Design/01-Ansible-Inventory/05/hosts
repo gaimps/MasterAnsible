@@ -1,0 +1,23 @@
+[all]
+master-ansible-30
+client-ansible-31
+client-ansible-32
+client-ansible-33
+client-ansible-34 ansible_user=root ansible_port=2222
+
+[master]
+master-ansible-30 ansible_connection=local
+
+[client]
+client-ansible-31 ansible_user=root
+client-ansible-32 ansible_become=true ansible_become_pass=R00t123
+client-ansible-33 ansible_user=root
+client-ansible-34 ansible_user=root
+
+[client-pair]
+client-ansible-32
+client-ansible-34
+
+[client-impair]
+client-ansible-31
+client-ansible-33
