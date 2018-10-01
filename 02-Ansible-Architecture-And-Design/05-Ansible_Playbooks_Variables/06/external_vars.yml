@@ -14,4 +14,7 @@ external_named_list:
   - item4
 
 external_inline_named_list:
-  [ item1, item2, item3, item4 ]     
+  [ item1, item2, item3, item4 ]
+
+external_inline_martin:
+  {name: Martin D'vloper}     
