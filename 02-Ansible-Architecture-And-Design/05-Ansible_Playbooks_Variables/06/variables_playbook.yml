@@ -70,5 +70,9 @@
     - name: Test get Martin job
       debug:
         msg: "{{ external_inline_martin.job }}"
+
+    - name: Test get Martin skill
+      debug:
+        msg: "{{ external_inline_martin.skill }}"        
   # Three dots indicate the end of a YAML document
 ...
