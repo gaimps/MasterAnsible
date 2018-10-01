@@ -61,13 +61,14 @@
 
     - name: Test Martin 0
       debug:
-        msg: "{external_inline_martin}"
+        msg: "{{ external_inline_martin }}"
+
     - name: Test get martin name
       debug:
-        msg: "{external_inline_martin.1}"
+        msg: "{{ external_inline_martin.1 }}"
 
     - name: Test get Martin job
       debug:
-        msg: "{external_inline_martin.2"
+        msg: "{{ external_inline_martin.2 }}"
   # Three dots indicate the end of a YAML document
 ...
