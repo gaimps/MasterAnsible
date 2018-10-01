@@ -2,7 +2,7 @@
 -
   hosts: client-ansible-31
   gather_facts: false
-  vars:
+  vars_files:
     - external_vars.yml
 
 # Task: the list of tasks that will be executed within the playbook
