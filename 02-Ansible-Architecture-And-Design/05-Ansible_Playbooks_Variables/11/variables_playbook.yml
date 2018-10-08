@@ -10,9 +10,9 @@
   tasks:
     - name: test hostvar with an ansible fact and collecct ansible port dot notation
       debug:
-        msg: "{{ hostvars[ansible_hostname].ansible_port }}"
+        msg: "{{ hostvars[ansible_hostname].ansible_port | default('22') }}"
 
     - name: test hostvar with an ansible fact and collecct ansible port dict notation
       debug:
-        msg: "{{ hostvars[ansible_hostname]['ansible_port'] }}"
+        msg: "{{ hostvars[ansible_hostname]['ansible_port'] | default('22') }}"
 ...
