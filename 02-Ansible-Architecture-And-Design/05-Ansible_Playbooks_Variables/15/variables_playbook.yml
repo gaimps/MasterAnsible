@@ -8,7 +8,11 @@
 
   # tasks
   tasks:
-    - name: test groupvars from hostvars
+    - name: Test hostvars with an ansible fact and collect ansible_port, dot notation
       debug:
-        msg: "{{ hostvars[ansible_hostname].ansible_user }}"
+        msg: "{{ hostvars[ansible_hostname].ansible_port }}"
+
+    - name: Test groupvars
+      debug:
+        msg: "{{ ansible_user }}"
 ...
