@@ -1,0 +1,13 @@
+---
+-
+  # target
+  hosts: client
+  gather_facts: true
+
+  #variables
+
+  # tasks
+  tasks:
+    - name: Test extra vars
+      debug:
+        msg: "{{ extra_vars_key }}"
