@@ -1,0 +1,14 @@
+---
+-
+  # target
+  hosts: linux
+  gather_facts: true
+
+  #variables
+
+  # tasks
+  tasks:
+    - name: test groupvars
+      debug:
+        msg: "{{ ansible_user }}"
+...
