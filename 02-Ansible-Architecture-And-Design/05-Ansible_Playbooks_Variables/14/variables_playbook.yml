@@ -1,0 +1,14 @@
+---
+-
+  # target
+  hosts: ansible-client-31
+  gather_facts: true
+
+  #variables
+
+  # tasks
+  tasks:
+    - name: test groupvars from hostvars
+      debug:
+        msg: "{{ hostvar[ansible_hostname].ansible_user }}"
+...
