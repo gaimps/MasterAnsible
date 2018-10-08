@@ -11,7 +11,7 @@
 
   # tasks
   tasks:
-    name: test vars_prompt
-    debug:
-      msg: "{{ username }}"
+    - name: test vars_prompt
+      debug:
+        msg: "{{ username }}"
 ...
