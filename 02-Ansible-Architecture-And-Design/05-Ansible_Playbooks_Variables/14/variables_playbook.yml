@@ -10,5 +10,5 @@
   tasks:
     - name: test groupvars from hostvars
       debug:
-        msg: "{{ hostvar[ansible_hostname].ansible_user }}"
+        msg: "{{ hostvars[ansible_hostname].ansible_user }}"
 ...
