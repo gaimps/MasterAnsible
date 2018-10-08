@@ -1,0 +1,17 @@
+---
+-
+  # target
+  hosts: client-ansible-31
+  gather_facts: false
+
+  #variables
+  vars_prompt:
+    - name: username
+      private: false
+
+  # tasks
+  tasks:
+    name: test vars_prompt
+    debug:
+      msg: "{{ username }}"
+...
