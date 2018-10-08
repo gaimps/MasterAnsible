@@ -1,7 +1,7 @@
 ---
 -
   # target
-  hosts: ansible-client-31
+  hosts: client-ansible-31
   gather_facts: true
 
   #variables
