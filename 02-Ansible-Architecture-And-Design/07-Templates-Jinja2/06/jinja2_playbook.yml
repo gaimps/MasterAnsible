@@ -1,0 +1,15 @@
+---
+  -
+    # target
+    hosts: all
+
+  # Tasks:
+    tasks:
+      - name: Ansible Jinja2 for statement
+        debug:
+          msg: >
+                --== Ansible Jinja2 if vairable is defined ==--
+                  {% for entry on ansible_all_ipv4_addresses -%}
+                    IP Address entry {{ loop.index }} = {{ entry }}
+                  {% endfor %}
+...
