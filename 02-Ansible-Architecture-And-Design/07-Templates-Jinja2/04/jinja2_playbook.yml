@@ -5,14 +5,14 @@
 
   # Tasks:
     tasks:
-      - name: Nsible Jinja2 if varaible is defined
+      - name: Ansible Jinja2 if varaible is defined
         debug:
           msg: >
                 --== Ansible Jinja2 if vairable is defined ==--
 
                   {% if example_variable is defined -%}
-                          example_variable is defined
+                      example_variable is defined
                   {% else -%}
-                       example_variable is not defined       
+                       example_variable is not defined
                   {% endif %}
 ...
