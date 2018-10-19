@@ -1,0 +1,18 @@
+---
+  -
+    # target
+    hosts: all
+
+  # Tasks:
+    tasks:
+      - name: Nsible Jinja2 if
+        debug:
+          msg: >
+                --== Ansible Jinja2 if statement ==--
+                  {# if the hostname is master-ansible include a mesage -#}
+                  {% if ansible_hostname == "master-ansible-30" -%}
+                          this is master-ansible-30
+                  {% elif ansible_hostname == "client-ansible-34" -%}
+                          this client is using SSH port 2222
+                  {% endif %}
+...
