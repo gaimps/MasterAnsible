@@ -7,28 +7,24 @@
     tasks:
       - name: Make Facts Dir
         file:
-          path: /home/AdminSYS/ansible/facts.d
+          path: /etc/ansible/facts.d
           recurse: yes
           state: directory
-          owner: AdminSYS
 
       - name: Copy Fact 1
         copy:
-          src: facts.d/getdate1.fact
-          dest: /home/AdminSYS/ansible/facts.d/getdate1.fact
-          owner: AdminSYS
+          src: /etc/ansible/facts.d/getdate1.fact
+          dest: /etc/ansible/facts.d/getdate1.fact
           mode: 0755
 
       - name: Copy Fact 2
         copy:
-          src: facts.d/getdate2.fact
-          dest: /home/AdminSYS/ansible/facts.d/getdate2.fact
-          owner: AdminSYS
+          src: /etc/ansible/facts.d/getdate2.fact
+          dest: /etc/ansible/facts.d/getdate2.fact
           mode: 0755
 
-      - name: Reload Facts
+      - name: Refresh Facts
         setup:
-          fact_path: /home/AdminSYS/ansible/facts.d
 
       - name: Show Ip Address
         debug:
