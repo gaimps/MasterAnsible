@@ -9,7 +9,7 @@
         debug:
           msg: >
                 --== Ansible Jinja2 if vairable is defined ==--
-                  {% set example_variable = 'defined'}
+                  {% set example_variable = 'defined'-%}
                   {% if example_variable is defined -%}
                       example_variable is defined
                   {% else -%}
