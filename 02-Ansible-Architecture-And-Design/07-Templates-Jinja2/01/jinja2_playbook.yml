@@ -10,7 +10,7 @@
           msg: >
                 --== Ansible Jinja2 if statement ==--
                   {# if the hostname is master-ansible include a mesage -#}
-                  {% if ansibl_hostname == "master-ansible-30" -%}
+                  {% if ansible_hostname == "master-ansible-30" -%}
                           this is master-ansible-30
                   {% endif %}
 ...
