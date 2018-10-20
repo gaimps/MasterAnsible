@@ -1,0 +1,15 @@
+---
+  -
+    # target
+    hosts: all
+
+  # Tasks:
+    tasks:
+      - name: Ansible Jinja2 for range
+        debug:
+          msg: >
+                --== Ansible Jinja2 for range ==--
+                  {% for entry in range(1, 11) -%}
+                   {{ entry }}
+                  {% endfor %}
+...
