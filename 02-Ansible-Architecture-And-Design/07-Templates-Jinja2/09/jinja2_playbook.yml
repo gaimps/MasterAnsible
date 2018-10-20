@@ -1,0 +1,18 @@
+---
+  -
+    # target
+    hosts: all
+
+  # Tasks:
+    tasks:
+      - name: Ansible Jinja2 for range
+        debug:
+          msg: >
+                --== Ansible Jinja2 for range ==--
+                  {% for entry in range(10, 0, -1) -%}
+                    {% if entry is odd -%}
+                      {% contunue %}
+                    {% endif -%}
+                    {{ entry }}
+                  {% endfor %}
+...
