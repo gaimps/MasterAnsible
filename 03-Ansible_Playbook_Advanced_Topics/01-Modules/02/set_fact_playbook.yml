@@ -1,0 +1,18 @@
+---
+  -
+    hosts: client-ansible-31
+
+    tasks:
+      - name: Set facts
+        set_fact:
+          our_fact: Ansible Rocks!
+          ansible_distribution: "{{ ansible_distribution | upper }}"
+
+      - name: Show custom fact
+        debug:
+          msg: "{{ our_fact }}"
+
+      - name: Show ansible_distribution
+        debug:
+          msg: "{{ ansible_distribution }}"    
+...
