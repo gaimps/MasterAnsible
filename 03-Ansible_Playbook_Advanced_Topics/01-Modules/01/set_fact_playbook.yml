@@ -1,6 +1,6 @@
 ---
   -
-    hosts: centos3
+    hosts: client-ansible-31
 
     tasks:
       - name: Set facts
@@ -10,4 +10,4 @@
       - name: Show custom fact
         debug:
           msg: "{{ our_fact }}"
-...              
+...
