@@ -1,0 +1,19 @@
+---
+  -
+    hosts: client-ansible-31
+
+    tasks:
+      - name: Install Epel
+        yum:
+          name: epel-release
+          update-cache: yes
+          state: latest
+        when: ansible_distribution == 'CentOS'
+
+      - name: Install nginx
+        yum:
+          name: nginx
+          update_cache: yes
+          state: latest
+        when: ansible_distribution == 'CentOS'
+...        
