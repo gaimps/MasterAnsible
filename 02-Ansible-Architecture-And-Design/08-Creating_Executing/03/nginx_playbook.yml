@@ -1,0 +1,32 @@
+---
+  -
+    hosts: client-ansible-31
+
+    tasks:
+      - name: Install Epel
+        yum:
+          name: epel-release
+          update_cache: yes
+          state: latest
+        when: ansible_distribution == 'CentOS'
+
+      - name: Install nginx
+        yum:
+          name: nginx
+          update_cache: yes
+          state: latest
+        when: ansible_distribution == 'CentOS'
+
+      - name: Install Patch
+        yum:
+          name: patch
+          update_cache: yes
+          state: latest
+        when: ansible_distribution == 'Centos'
+
+      - name: Patch nginx.conf to inclide sites-available,
+        patch:
+          src: files/ngnix.conf.centos.Patch
+          dest: /etc/nginx/nginx.conf
+        when: ansible_distribution = 'Centos'
+...
