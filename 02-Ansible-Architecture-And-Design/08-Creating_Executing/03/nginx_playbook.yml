@@ -28,5 +28,5 @@
         patch:
           src: files/ngnix.conf.centos.patch
           dest: /etc/nginx/nginx.conf
-        when: ansible_distribution = 'CentOS'
+        when: ansible_distribution == 'CentOS'
 ...
