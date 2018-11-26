@@ -22,7 +22,7 @@
           name: patch
           update_cache: yes
           state: latest
-        when: ansible_distribution == 'Centos'
+        when: ansible_distribution == 'CentOS'
 
       - name: Patch nginx.conf to inclide sites-available,
         patch:
