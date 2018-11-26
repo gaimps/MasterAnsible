@@ -1,0 +1,9 @@
+---
+  -
+    hosts: client-ansible-31, client-ansible-32
+
+    tasks:
+      - name: Pause our Playbooks
+        pause:
+          second: 10
+...          
