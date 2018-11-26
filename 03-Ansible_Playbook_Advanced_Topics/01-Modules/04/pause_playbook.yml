@@ -5,5 +5,5 @@
     tasks:
       - name: Pause our Playbooks
         pause:
-          second: 10
-...          
+          seconds: 10
+...
