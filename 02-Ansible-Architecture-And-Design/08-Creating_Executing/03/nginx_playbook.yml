@@ -6,14 +6,14 @@
       - name: Install Epel
         yum:
           name: epel-release
-          update_cache: yes
+          update_cache: no
           state: latest
         when: ansible_distribution == 'CentOS'
 
       - name: Install nginx
         yum:
           name: nginx
-          update_cache: yes
+          update_cache: no
           state: latest
         when: ansible_distribution == 'CentOS'
 
