@@ -1,0 +1,88 @@
+---
+  -
+    hosts: client-ansible-31
+
+    tasks:
+      - name: Install Epel
+        yum:
+          name: epel-release
+          state: latest
+        when: ansible_distribution == 'CentOS'
+
+      - name: Install nginx
+        yum:
+          name: nginx
+          state: latest
+        when: ansible_distribution == 'CentOS'
+
+      - name: Install Patch
+        yum:
+          name: patch
+          update_cache: yes
+          state: latest
+        when: ansible_distribution == 'CentOS'
+
+      - name: Patch nginx.conf to inclide sites-available,
+        patch:
+          src: files/nginx.conf.centos.patch
+          dest: /etc/nginx/nginx.conf
+        when: ansible_distribution == 'CentOS'
+
+      - name: Create /etc/nginx/sites-available directory if required
+        file:
+          path: /etc/nginx/sites-available
+          state: directory
+
+      - name: Create /etc/nginx/sites-enabled directory if required
+        file:
+          path: /etc/nginx/sites-enabled
+          state: directory
+
+      - name: Copy default nginx configuration
+        copy:
+          src: files/nginx-default.conf
+          dest: /etc/nginx/sites-available/default
+
+      - name: Symbolic link
+        file:
+          src: /etc/nginx/sites-available/default
+          dest: /etc/nginx/sites-enabled/default
+          state: link
+
+      - name: Create nginx/html directory if required
+        file:
+          path: /usr/share/nginx/html
+          state: directory
+
+      - name: Template index.html.j2
+        template:
+          src: templates/index.html.j2
+          dest: /usr/share/nginx/html/index.html
+          mode: 0644
+
+      - name: Restart nginx
+        service:
+          name: nginx
+          state: restarted
+        notify: Check HTTP service
+
+      - name: Open Centos Firewall for nginx
+        firewalld:
+          service: http
+          permanent: True
+          state: enabled
+        when: ansible_distribution == 'CentOS'
+        notify: Reload Firewall
+
+    handlers:
+      - name: Check HTTP service
+        uri:
+          url: http://{{ ansible_default_ipv4.address }}
+          status_code: 200
+
+      - name: Reload Firewall
+        service:
+          name: firewalld
+          state: reloaded
+
+...
