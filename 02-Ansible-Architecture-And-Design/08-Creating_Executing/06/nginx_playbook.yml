@@ -80,7 +80,7 @@
           url: http://{{ ansible_default_ipv4.address }}
           status_code: 200
 
-      - name: Reload firewall
+      - name: Reload Firewall
         service:
           name: firewalld
           state: reloaded
