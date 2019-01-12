@@ -66,10 +66,23 @@
           state: restarted
         notify: Check HTTP service
 
+      - name: Open Centos Firewall for nginx
+        firewalld:
+          service: http
+          permanent: True
+          state: enabled
+        when: ansible_distribution == 'CentOS'
+        notify: Reload Firewall
+
     handlers:
       - name: Check HTTP service
         uri:
           url: http://{{ ansible_default_ipv4.address }}
           status_code: 200
+
+      - name: Reload firewall
+        service:
+          name: firewalld
+          state: reloaded
 
 ...
