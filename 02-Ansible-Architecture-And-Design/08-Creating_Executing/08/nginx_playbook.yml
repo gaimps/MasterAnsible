@@ -1,6 +1,6 @@
 ---
   -
-    hosts: client-ansible-31
+    hosts: client-ansible-31,client-ansible-32
 
     tasks:
       - name: Install Epel
