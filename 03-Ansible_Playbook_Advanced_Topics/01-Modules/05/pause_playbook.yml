@@ -1,0 +1,9 @@
+---
+  -
+    hosts: client-ansible-31, client-ansible-32
+
+    tasks:
+      - name: Prompt usr to verify before continue
+        pause:
+          prompt: Please check that the webserver is running, press enter to continue
+...
