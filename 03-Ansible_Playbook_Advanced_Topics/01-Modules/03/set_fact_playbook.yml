@@ -17,7 +17,7 @@
           webserver_application_user: root
         when: ansible_distribution == 'CentOS'
 
-      - name: Show pre-set distrbution besd facts
+      - name: Show pre-set distrbution based facts
         debug:
           msg: "webserver_application_path:{{ webserver_application_path}} webserver_application_port:{{webserver_application_port}}  webserver_application_user:{{ webserver_application_user }}"
 
