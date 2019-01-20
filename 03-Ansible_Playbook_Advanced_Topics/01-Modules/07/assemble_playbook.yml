@@ -13,7 +13,7 @@
   tasks:
     - name: Assemble conf.d to sshd_config
       assemble:
-        src: conf.d
+        src: conf.d/
         dest: sshd_config
 
 # Three dots indicate the end of a YAML document
