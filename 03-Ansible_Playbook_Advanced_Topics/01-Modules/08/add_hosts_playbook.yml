@@ -1,0 +1,28 @@
+---
+# YAML documents begin with the document separator ---
+
+# The minus in YAML this indicates a list item.  The playbook contains a list
+# of plays, with each play being a dictionary
+-
+
+  # Target: where our play will run and options it will run with
+  hosts: master-ansible-30
+
+  # Task: the list of tasks that will be executed within the play, this section
+  # can also be used for pre and post tasks
+  tasks:
+    - name: Add Host to adhoc_group
+      add_host:
+        name: client-ansible31,client-ansible32
+        groups: adhoc_group1, adhoc_group2
+
+-
+  hosts: adhoc_group1
+
+  tasks:
+    - name: ping adhoc_group1
+      ping:
+
+
+# Three dots indicate the end of a YAML document
+...
