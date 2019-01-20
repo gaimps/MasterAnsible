@@ -22,7 +22,6 @@
   tasks:
     - name: ping adhoc_group1
       ping:
-
-
+        
 # Three dots indicate the end of a YAML document
 ...
