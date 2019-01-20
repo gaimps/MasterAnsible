@@ -13,7 +13,7 @@
   tasks:
     - name: Add Host to adhoc_group
       add_host:
-        name: client-ansible31,client-ansible32
+        name: client-ansible-31,client-ansible-32
         groups: adhoc_group1, adhoc_group2
 
 -
