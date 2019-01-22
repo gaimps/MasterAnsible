@@ -11,8 +11,12 @@
   # tasks: list of tasks that will be executed within the plays
   # can also be pre and post tasks
   tasks:
-    -name: Exporing register
-    command: hostname -s
-    register: hostname_output
+    - name: Exporing register
+      command: hostname -s
+      register: hostname_output
 
-...    
+    - name: show hostname_output
+      debug:
+        var: hostname_output
+
+...
