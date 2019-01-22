@@ -1,0 +1,17 @@
+---
+
+# the minus indictges a list item, the playbook contain a lsits of ,
+#with each play being a dictionary
+-
+
+  # Target
+  hosts: client
+
+
+  # tasks: list of tasks that will be executed within the plays
+  # can also be pre and post tasks
+  tasks:
+    - name: Exporing register
+      command: hostname -s
+      when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "7"
+...
