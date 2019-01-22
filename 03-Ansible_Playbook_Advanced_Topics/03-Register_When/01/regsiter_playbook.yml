@@ -1,22 +1,19 @@
 ---
-
-# the minus indictges a list item, the playbook contain a lsits of ,
-#with each play being a dictionary
--
+  -
 
   # Target
-  hosts: client
+    hosts: client
 
 
   # tasks: list of tasks that will be executed within the plays
   # can also be pre and post tasks
-  tasks:
-    - name: Exploring register
-      command: hostname -s
-      register: hostname_output
+    tasks:
+      - name: Exploring register
+        command: hostname -s
+        register: hostname_output
 
-    - name: show hostname_output
-      debug:
-        var: hostname_output
+      - name: show hostname_output
+        debug:
+          var: hostname_output
 
 ...
