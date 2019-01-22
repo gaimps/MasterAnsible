@@ -1,12 +1,9 @@
 ---
   -
 
-  # Target
     hosts: client
 
 
-  # tasks: list of tasks that will be executed within the plays
-  # can also be pre and post tasks
     tasks:
       - name: Exploring register
         command: hostname -s
