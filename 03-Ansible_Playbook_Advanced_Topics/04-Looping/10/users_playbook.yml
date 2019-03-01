@@ -27,12 +27,12 @@
           - surname: Jalba
             members:
               - ana
-          - surname:
+          - surname: Angne
             members:
               - abhishek
-          - surname:
+          - surname: Mahmood
             members:
-              - sara            
+              - sara
 
 # Three dots indicate the end of a YAML document
 ...
