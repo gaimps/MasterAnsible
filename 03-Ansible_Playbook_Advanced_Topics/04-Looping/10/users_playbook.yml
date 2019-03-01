@@ -33,6 +33,7 @@
           - surname: Mahmood
             members:
               - sara
+        - members      
 
 # Three dots indicate the end of a YAML document
 ...
