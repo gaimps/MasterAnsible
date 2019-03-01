@@ -23,6 +23,7 @@
             members:
               - james
               - hayley
+              - lily
               - anwen
           - surname: Jalba
             members:
@@ -42,6 +43,6 @@
         state: directory
       with_nested:
         - [ james, hayley, lily, anwen, ana, abhishek, sara ]
-        - [ photos, movies, documents ]  
+        - [ photos, movies, documents ]
 # Three dots indicate the end of a YAML document
 ...
