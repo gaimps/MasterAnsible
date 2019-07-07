@@ -13,11 +13,18 @@
 
   # Task: the list of tasks that will be executed within the playbook
   tasks:
-    - name: Run the script until hit 10
-      script: random.sh
-      register: result
-      retries: 100
-      until: result.stdout.find("10") != -1
+    - name: Creating user
+      user:
+        name: "{{ item.key }}"
+        comment: "{{ item.value.full_name }}"
+      with_dict:
+        james:
+          full_name: James Spurin
 
+    - name: Create directory folder
+      file:
+        dest: "{{ item }}"
+        state: directory
+      with_sequence: count=5 start=0 end=16 stride=1 format=/home/james/count_hexadecimal_%x
 # Three dots indicate the end of a YAML document
 ...
