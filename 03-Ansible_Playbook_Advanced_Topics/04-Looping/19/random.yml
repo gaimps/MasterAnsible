@@ -25,6 +25,6 @@
       file:
         dest: "{{ item }}"
         state: directory
-      with_sequence: count=5 start=0 end=16 stride=1 format=/home/james/count_hexadecimal_%x
+      with_sequence: count=5  format=/home/james/count_hexadecimal_%x
 # Three dots indicate the end of a YAML document
 ...
