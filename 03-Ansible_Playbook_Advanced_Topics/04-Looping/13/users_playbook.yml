@@ -13,9 +13,9 @@
 
   # Task: the list of tasks that will be executed within the playbook
   tasks:
-    - name: Creating users
+    - name: Creating user
       user:
-        name: "{{ item.1 }}"
+        name: "{{ item.key }}"
         comment: "{{ item.value.full_name }}"
       with_dict:
         james:
@@ -27,6 +27,6 @@
         user: James
         key: "{{ item }}"
       with_file:
-        - custom_key.pub 
+        - custom_key.pub
 # Three dots indicate the end of a YAML document
 ...
